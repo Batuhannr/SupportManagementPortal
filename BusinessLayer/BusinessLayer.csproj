@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D0666EA-CC81-4850-AF17-65E66B063088}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ICompaniesService.cs" />
+    <Compile Include="Abstract\ITitleService.cs" />
+    <Compile Include="Abstract\ITicketsService.cs" />
+    <Compile Include="Abstract\ITicketFormsService.cs" />
+    <Compile Include="Abstract\ITagsService.cs" />
+    <Compile Include="Abstract\ISituationService.cs" />
+    <Compile Include="Abstract\ISectorService.cs" />
+    <Compile Include="Abstract\IRepresentativeService.cs" />
+    <Compile Include="Abstract\IPersonsService.cs" />
+    <Compile Include="Abstract\IGroupService.cs" />
+    <Compile Include="Abstract\ICustomerService.cs" />
+    <Compile Include="Abstract\IAccountLevelService.cs" />
+    <Compile Include="Concrete\TitleManager.cs" />
+    <Compile Include="Concrete\TicketsManager.cs" />
+    <Compile Include="Concrete\TicketFormsManager.cs" />
+    <Compile Include="Concrete\TagsManager.cs" />
+    <Compile Include="Concrete\SituationManager.cs" />
+    <Compile Include="Concrete\SectorManager.cs" />
+    <Compile Include="Concrete\RepresentativeManager.cs" />
+    <Compile Include="Concrete\PersonsManager.cs" />
+    <Compile Include="Concrete\GroupManager.cs" />
+    <Compile Include="Concrete\CustomersManager.cs" />
+    <Compile Include="Concrete\CompaniesManager.cs" />
+    <Compile Include="Concrete\AccountLevelManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{7447D17F-8477-4D97-8EC3-ED462ACCBEB6}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{5571EDA7-DAA7-4967-ADBD-50AA9C58A7F7}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
